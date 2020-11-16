@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Convert Mata Uang</title>
+</head>
+<body>
+<br><br><br>
+<h1 align="center">Convert Mata Uang</h1><br>
+
+<table border="5" align="center" width="700" style="background-color: cyan;">
+	<tr>
+		<td align="center">NOMINAL</td>
+		<td align="center">VALLAS</td>
+		<td align="center">Hasil Convert</td>
+	</tr>
+	<tr>
+	<td align="center">
+			<input id="data1" class="form-control" type="text" placeholder="Masukkan Jumlah Nominal" name=""><br>
+
+			<input type="button" class="btn btn-success" onclick="convert()" name="" value="Convert">
+
+	</td>
+
+	<td align="center">
+		<div class="container">
+		<form id="form2" name="form2" onsubmit="return false">
+			<select id="kategori1" class="form-control">
+			  	<option value="rm">Malaysia (Ringgit)</option>
+			  	<option value="usd">Amerika (US Dollar)</option>
+			  	<option value="sgd">Singapore (SG Dollar)</option>
+			  	<option value="yen">Jepang (Yen)</option>
+			  	<option value="euro">Germany (Euro)</option>
+			  	<option value="riyal">Arab Saudi (Riyal)</option>
+			  	<option value="idr">Indonesia (Rupiah)</option>
+			</select>
+		</form>
+		<br>
+		
+	</td>
+	<td align="center">
+		<p id="tampil"></p>
+	</td>
+
+	</tr>
+</table>
+
+<script type="text/javascript">
+
+	function convert() {
+		
+		var mata_uang = document.getElementById('form2').kategori1.value;
+		var masukan = parseFloat(data1.value);
+
+		if (mata_uang == "usd") {
+
+				var hasil = masukan * 9915;
+				var rp = "Rp.";
+
+				document.getElementById("tampil").innerHTML = rp+hasil;
+
+		} else if (mata_uang == "sgd") {
+
+			hasil = masukan * 13472;
+			rp = "Rp.";
+			document.getElementById("tampil").innerHTML = rp+hasil;
+		}else if (mata_uang == "rm") {
+
+			hasil = masukan * 874;
+			rp = "Rp.";
+			document.getElementById("tampil").innerHTML = rp+hasil;
+		}else if (mata_uang == "yen") {
+			
+			hasil = masukan * 120;
+			rp = "Rp.";
+			document.getElementById("tampil").innerHTML = rp+hasil; 
+
+		} else if (mata_uang == "euro") {
+
+			hasil = masukan * 15888;
+			rp = "Rp.";
+
+			document.getElementById("tampil").innerHTML = rp+hasil;
+			
+		} else if (mata_uang == "riyal") {
+
+			hasil = masukan * 3592;
+			rp = "Rp.";
+			document.getElementById("tampil").innerHTML = rp+hasil;
+		} else if (mata_uang == "idr") {
+			
+			hasil = masukan * 1;
+			rp = "Rp.";
+			document.getElementById("tampil").innerHTML = rp+hasil; 
+
+		} 
+
+	}
+
+
+</script>
+
+</body>
+</html>
